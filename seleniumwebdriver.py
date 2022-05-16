@@ -35,3 +35,4 @@ try:
 #!!!!!!!!!!!!  DACA PRIMESTI EROAREA 'StaleElementReferenceException' s-a schimbat ceva in pagina web si trebuie sa verifici din nou testul !!!!!!!!!!
 finally:    #la finalul rularii, orice s-ar intampla sa ruleze comanda urmatoare
     browser.quit()   #inchide browserul
+print("The automation test has finished")
