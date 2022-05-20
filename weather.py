@@ -16,6 +16,8 @@ request_url3 = f"{BASE_URL}?appid={API_KEY}&q={city3}"
 response1 = requests.get(request_url1)
 response2 = requests.get(request_url2)
 response3 = requests.get(request_url3)
+
+
 def weather_fct():
     if response1.status_code == 200 and response2.status_code == 200 and response3.status_code == 200:
         data1 = response1.json()
@@ -35,22 +37,22 @@ def weather_fct():
         country3 = data3['sys']['country']
 
         city11 = "Weather in {} is: {}.".format(city1, weather1)
-        city12 = "Temperature in {} is: {} celcius".format(city1,temperature1)
+        city12 = "Temperature in {} is: {} celcius".format(city1, temperature1)
         city13 = "Country: {}".format(country1)
 
         city21 = "Weather in {} is: {}.".format(city2, weather2)
-        city22 = "Temperature in {} is: {} celcius".format(city2,temperature2)
+        city22 = "Temperature in {} is: {} celcius".format(city2, temperature2)
         city23 = "Country: {}".format(country2)
 
         city31 = "Weather in {} is: {}.".format(city3, weather3)
-        city32 = "Temperature in {} is: {} celcius".format(city3,temperature3)
+        city32 = "Temperature in {} is: {} celcius".format(city3, temperature3)
         city33 = "Country: {}".format(country3)
 
-        forcity1 = "{}\n{}\n{}".format(city11,city12,city13)
-        forcity2 = "{}\n{}\n{}".format(city21,city22,city23)
+        forcity1 = "{}\n{}\n{}".format(city11, city12, city13)
+        forcity2 = "{}\n{}\n{}".format(city21, city22, city23)
         forcity3 = "{}\n{}\n{}".format(city31, city32, city33)
         msg = EmailMessage()
-        msg.set_content('{}\n\n{}\n\n{}'.format(forcity1,forcity2,forcity3))
+        msg.set_content('{}\n\n{}\n\n{}'.format(forcity1, forcity2, forcity3))
         msg['Subject'] = 'Your weather notification'
         msg['From'] = "notificationstoyou@gmail.com"
         msg['To'] = "andreeatarantus@yahoo.com"
@@ -64,7 +66,5 @@ def weather_fct():
     else:
         print("There was an error")
 
+
 weather_fct()
-
-
-
