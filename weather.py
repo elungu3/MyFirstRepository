@@ -62,6 +62,7 @@ def weather_fct():
         server.login("notificationstoyou@gmail.com", "p0pcornparola!")
         server.send_message(msg)
         server.quit()
+        print("Your weather notification has been sent succesfully")
 
     else:
         print("There was an error")
